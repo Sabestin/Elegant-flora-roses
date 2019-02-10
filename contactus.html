@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Contact us - Elegant Flora</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+		/****  floating-Lable style start ****/
+	.floating-label {
+	  position:relative;
+	  margin-bottom:20px;
+	}
+	.floating-input , .floating-select {
+	  font-size:14px;
+	  padding:4px 4px;
+	  display:block;
+	  width:100%;
+	  height:30px;
+	  background-color: transparent;
+	  border:none;
+	  border-bottom:1px solid #757575;
+	}
+
+	.floating-input:focus , .floating-select:focus {
+	     outline:none;
+	     border-bottom:2px solid #5264AE;
+	}
+
+	label {
+	  color:#999;
+	  font-size:14px;
+	  font-weight:normal;
+	  position:absolute;
+	  pointer-events:none;
+	  left:5px;
+	  top:5px;
+	  transition:0.2s ease all;
+	  -moz-transition:0.2s ease all;
+	  -webkit-transition:0.2s ease all;
+	}
+
+	.floating-input:focus ~ label, .floating-input:not(:placeholder-shown) ~ label {
+	  top:-18px;
+	  font-size:14px;
+	  color:#ff0000;
+	}
+
+	.floating-select:focus ~ label , .floating-select:not([value=""]):valid ~ label {
+	  top:-18px;
+	  font-size:14px;
+	  color:#ff0000;
+	}
+
+	/* active state */
+	.floating-input:focus ~ .bar:before, .floating-input:focus ~ .bar:after, .floating-select:focus ~ .bar:before, .floating-select:focus ~ .bar:after {
+	  width:50%;
+	}
+
+	*, *:before, *:after {
+	    -webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	    box-sizing: border-box;
+	}
+
+	.floating-textarea {
+	   min-height: 30px;
+	   max-height: 260px;
+	   overflow:hidden;
+	  overflow-x: hidden;
+	}
+
+	/* highlighter */
+	.highlight {
+	  position:absolute;
+	  height:50%;
+	  width:100%;
+	  top:15%;
+	  left:0;
+	  pointer-events:none;
+	  opacity:0.5;
+	}
+
+	/* active state */
+	.floating-input:focus ~ .highlight , .floating-select:focus ~ .highlight {
+	  -webkit-animation:inputHighlighter 0.3s ease;
+	  -moz-animation:inputHighlighter 0.3s ease;
+	  animation:inputHighlighter 0.3s ease;
+	}
+
+	/* animation */
+	@-webkit-keyframes inputHighlighter {
+		from { background:#5264AE; }
+	  to 	{ width:0; background:transparent; }
+	}
+	@-moz-keyframes inputHighlighter {
+		from { background:#5264AE; }
+	  to 	{ width:0; background:transparent; }
+	}
+	@keyframes inputHighlighter {
+		from { background:#5264AE; }
+	  to 	{ width:0; background:transparent; }
+	}
+	</style>
+	<script>
+	function _(id){ return document.getElementById(id); }
+	function submitForm(){
+		_("mybtn").disabled = true;
+		_("status").innerHTML = 'please wait ...';
+		var formdata = new FormData();
+		formdata.append( "n", _("n").value );
+		formdata.append( "e", _("e").value );
+		formdata.append( "c", _("c").value );
+		formdata.append( "m", _("m").value );
+		var ajax = new XMLHttpRequest();
+		ajax.open( "POST", "example_parser.php" );
+		ajax.onreadystatechange = function() {
+			if(ajax.readyState == 4 && ajax.status == 200) {
+				if(ajax.responseText == "success"){
+					_("my_form").innerHTML = '<h2>Thanks '+_("n").value+', your message has been sent.</h2>';
+				} else {
+					_("status").innerHTML = ajax.responseText;
+					_("mybtn").disabled = false;
+				}
+			}
+		}
+		ajax.send( formdata );
+	}
+	</script>
+
+
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">Elegant Flora</a>
+					<nav id="nav">
+						<a href="index.html">Home</a>
+						<a href="product.html">Product</a>
+						<a href="ourfram.html">Our  farm</a>
+						<a href="investorsrelations.html">Investors  Relations</a>
+						<a href="aboutus.html">About  us</a>
+						<a href="contactus.html">Contact  us</a>
+					</nav>
+				</div>
+			</header>
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+
+		<!-- Main -->
+			<section id="main">
+				<div class="inner">
+
+								<section>
+									<h3>Contact Details</h3><hr>
+
+									<div class="row">
+										<div class="9u 12u$(xsmall)">
+
+											<iframe width="100%" height="500px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d460.12568394285717!2d73.58077463072719!3d18.87116783318479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf60cfb37066237bf!2sElegant+Flora+Farm!5e0!3m2!1sen!2sin!4v1546018793654"></iframe>
+										</div>
+										<div class="3u$ 12u$(xsmall)">
+											<h3>Address</h3><hr>
+
+										  <p>
+
+						            Farm 358, Village Mouje Kashal, Taluka Maval,
+						             Vadagaon, Dist. Pune – 412106
+						            <br>
+						          </p>
+
+						          <p>
+						            <abbr title="Email">E</abbr>:
+												<a href="mailto:elegantflora2012@gmail.com">elegantflora2012@gmail.com
+						            </a>
+						          </p>
+						          <p>
+						            <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM
+						          </p>
+
+										</div>
+									</div>
+
+								</section>
+
+
+
+								<hr>
+								<section>
+									<div class="row">
+										<div class="9u 12u$(xsmall)">
+
+											<iframe width="100%" height="500px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d942.5486242580355!2d72.82726692915975!3d19.099121566474608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9f6990c8f43%3A0xbc8e364bf43d4b29!2sElegant+Floriculture+%26+Agrotech+(I)!5e0!3m2!1sen!2sin!4v1546018390864"></iframe>
+
+										</div>
+
+										<div class="3u$ 12u$(xsmall)">
+											<h3>Registered Office :	</h3>
+						          <p>
+												Elegant Floriculture & Agrotech (I) Limited
+												101, Sagarika CHS Ltd., Plot No.89,
+												Juhu Tara Road, Santacruz (W),
+												Mumbai-400049
+						          </p>
+						          <p>
+						            <abbr title="Phone">P</abbr>: <a href="tel:02267084881">022-6708 4881</a>/<a href="tel:02267084882">82</a>/<a href="tel:02267084883">83</a>
+						          </p>
+						          <p>
+						            <abbr title="Email">E</abbr>:
+						            <a href="mailto:elegantflora2012@gmail.com">elegantflora2012@gmail.com
+						            </a>
+						          </p>
+						          <p>
+						            <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM
+						          </p>
+											<br>
+										</div>
+
+
+									</div>
+
+								</section>
+								<hr>
+								<h2>Designated Officials :</h2>
+								<hr>
+
+								<div class="table-wrapper">
+									<table>
+										<thead>
+											<tr>
+												<th>Sr.no</th>
+												<th>Name</th>
+												<th>Enquiry	</th>
+												<th>Contact Details</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>Mr. Aakash Agarwal</td>
+												<td>For Overseas Enquiries</td>
+												<td><a href="tel:+919920806991">+91 9920806991</a></td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td>Mr. Hitesh Agarwal</td>
+												<td>For Local Enquiries	</td>
+												<td><a href="tel:+919594648288">+91 9594648288</a></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+
+								<section>
+									<div class="row">
+										<div class="6u 12u$(xsmall)">
+
+											<h3>Register & Transfer Agent :</h3>
+
+											<p>
+												Sharex Dynamic (India) Pvt. Ltd.<br>
+												Unit no.1, Luthra Ind.Premises,<br>
+												Safed Pool, Andheri Kurla Road,<br>
+												Andheri (East), Mumbai-400072<br>
+												Tel:<a href="tel:02228563341">2856 3341</a>/<a href="tel:02228515606">2851 5606</a>
+
+											</p>
+
+										</div>
+
+										<div class="6u$ 12u$(xsmall)">
+
+											<h3>feedback</h3>
+											<form method="post" id="my_form" onsubmit="submitForm(); return false;">
+												<div class="row uniform 50%">
+													  <div class="floating-form">
+														<div class="floating-label">
+														  <input class="floating-input" id="n" name="Name"placeholder=" "required>
+														  <span class="highlight"></span>
+														  <label>Name </label>
+														</div>
+														<div class="floating-label">
+														  <input class="floating-input" id="c" name="Name"placeholder=" "required>
+														  <span class="highlight"></span>
+														  <span class="highlight"></span>
+														  <label>mobile number </label>
+														</div>
+														<div class="floating-label">
+														  <input class="floating-input" id="e"placeholder=" " pattern="[^ @]*@[^ @]*" required>
+														  <span class="highlight"></span>
+														  <label>Email Address</label>
+														</div>
+														<div class="floating-label">
+														  <input class="floating-input" id="m" placeholder=" "  required>
+														  <span class="highlight"></span>
+														  <label>write your feedback here</label>
+														</div>
+
+
+
+													  <p><input id="mybtn" type="submit" value="Submit Form"> <span id="status"></span>
+														<input type="reset" value="Reset"/></p>
+										        </div>
+
+										      <!-- /.row -->
+
+												</div>
+											</form>
+
+
+
+										</div>
+
+
+									</div>
+
+								</section>
+
+
+
+								<!-- Footer -->
+									<section id="footer">
+										<div class="inner">
+											<center>
+											<h4>Connect Us</h4>
+											<ul class="icons">
+												<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+												<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+												<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+												<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+												<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+												<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li>
+											</ul>
+											<div class="copyright">
+												&copy;2019 Elegant Flora :- Designed by <a href="https://www.linkedin.com/in/sabestin-nadar-9b612597/">Sabestin Nadar</a>
+											</div>
+										</center>
+										</div>
+									</section>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

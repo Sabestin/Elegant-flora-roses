@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Gallery image</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		.imgbox
+		{
+			width: 820px;
+			margin: 50px auto 20px;
+		}
+		.imgbox img
+		{
+			width: 100%;
+			border: 4px solid #fff;
+			box-shadow:0 5px 25px rgba(0,0,0,.5);
+		}
+		ul.thumb
+		{
+			margin: 0 auto;
+			padding: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		ul.thumb li
+		{
+			list-style: none;
+			margin: 0 10px;
+		}
+		ul.thumb li img
+		{
+			border: 4px solid #fff;
+			box-shadow:0 5px 25px rgba(0,0,0,.5);
+		}
+
+		</style>
+	</head>
+	<body>
+		<header id="header">
+			<div class="inner">
+				<a href="index.html" class="logo">Elegant Flora</a>
+				<nav id="nav">
+					<a href="index.html">Home</a>
+					<a href="product.html">Product</a>
+					<a href="ourfram.html">Our  farm</a>
+					<a href="investorsrelations.html">Investors  Relations</a>
+					<a href="aboutus.html">About  us</a>
+					<a href="contactus.html">Contact  us</a>
+				</nav>
+			</div>
+		</header>
+		<section id="one">
+
+				<br><br><div class="inner"><center><h3>GOLD STRIKE ROSES</h3></center></div>
+		<div class="inner">
+		<div class="imgbox"><img src="images/flower7/img1.JPG"></div>
+		<ul class="thumb">
+			<li><a href="images/flower7/img1.JPG" target="imgbox"><img src="images/flower7/img1.JPG" width="120px"></a></li>
+			<li><a href="images/flower7/img2.JPG" target="imgbox"><img src="images/flower7/img2.JPG" width="120px"></a></li>
+			<li><a href="images/flower7/img3.JPG" target="imgbox"><img src="images/flower7/img3.JPG" width="120px"></a></li>
+			<li><a href="images/flower7/img4.JPG" target="imgbox"><img src="images/flower7/img4.JPG" width="120px"></a></li>
+			<li><a href="images/flower7/img5.JPG" target="imgbox"><img src="images/flower7/img5.JPG" width="120px"></a></li>
+			<li><a href="product.html" class="button alt">Back to Gallery</a> </li>
+		</ul>
+	</div>
+</section>
+
+		<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+		<script type="text/JavaScript">
+			$(Document).ready(function(){
+					$('.thumb a').click(function(e){
+						e.preventDefault();
+						$('.imgbox img').attr("src", $(this).attr("href"));
+					})
+			})
+
+			</script>
+
+
+
+	</body>
+</html>
